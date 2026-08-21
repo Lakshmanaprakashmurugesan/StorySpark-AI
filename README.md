@@ -2,338 +2,629 @@
 
 # 🌙✨ StorySpark AI
 
-### Autonomous AI Bedtime Stories — Created & Delivered Every Night
+### Autonomous Bedtime Story Generation — Delivered While You’re Away
+
+**A new story. A new adventure. Already waiting when you return.**
 
 <br>
 
-### Imagine • Create • Inspire
+![AWS](https://img.shields.io/badge/AWS-Serverless-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white)
+![EventBridge](https://img.shields.io/badge/Amazon-EventBridge-8A2BE2?style=for-the-badge)
+![SES](https://img.shields.io/badge/Amazon-SES-DD344C?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-3.5%20Flash--Lite-4285F4?style=for-the-badge)
 
 <br>
 
-<img src="https://img.shields.io/badge/AWS-Cloud-232F3E?logo=amazonaws&logoColor=white" alt="AWS">
-<img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python">
-<img src="https://img.shields.io/badge/AWS-Lambda-FF9900?logo=awslambda&logoColor=white" alt="AWS Lambda">
-<img src="https://img.shields.io/badge/AWS-EventBridge-8A2BE2?logo=amazonaws&logoColor=white" alt="Amazon EventBridge">
-<img src="https://img.shields.io/badge/AWS-SES-DD344C?logo=amazonaws&logoColor=white" alt="Amazon SES">
-<img src="https://img.shields.io/badge/Gemini-3.5_Flash--Lite-4285F4?logo=googlegemini&logoColor=white" alt="Gemini">
-
-<br><br>
-
-**A serverless creative AI agent that wakes up every evening, creates an original children's bedtime story, formats it as a storybook-style email, and delivers it automatically to the inbox.**
+### ⏰ Schedule → ✨ Create → 📖 Format → 📧 Deliver
 
 <br>
 
-🏆 **AWS Builder Center Weekend Creative Agent Challenge**
+**Built for the AWS Builder Center Weekend Creative Agent Challenge**
+
+`#agents`
 
 </div>
 
 ---
 
-## ✨ What Is StorySpark AI?
+## 🌟 What is StorySpark AI?
 
-**StorySpark AI** is an autonomous bedtime-story generator built on AWS.
+Most generative AI applications wait for the user.
 
-Every evening, the system automatically:
+You open an application, enter a prompt, press a button, and wait for something to be generated.
 
-- 🎨 Creates a fresh creative seed
-- 🤖 Generates an original children’s bedtime story
-- ✅ Validates structured AI output
-- 📖 Formats the story as a polished HTML storybook email
-- 📧 Delivers it automatically to the recipient’s inbox
+**StorySpark AI works differently.**
 
-No button press.  
-No manually entered prompt.  
-No repeated user interaction.
+StorySpark is an autonomous bedtime-story workflow that automatically wakes up every evening, creates a completely new children's story, transforms it into a polished storybook-style email, and delivers it directly to an inbox.
 
-The goal is simple:
+Once the schedule is configured:
 
-> **When the user returns in the evening, a brand-new bedtime story is already waiting.**
+> **There is no daily prompt to enter and no Generate button to press.**
+
+The creative work happens automatically while the user is away.
+
+When the user returns, a new bedtime adventure is already waiting.
 
 ---
 
-## 🌙 Imagine • Create • Inspire
+## ✨ What StorySpark Creates
 
-StorySpark is designed around three simple ideas:
+Each execution can produce a complete bedtime-story experience containing:
 
-### 💭 Imagine
-Create a new creative direction every day using a theme, setting, date, weekday, and hero inspiration.
-
-### ✨ Create
-Generate an original, structured, child-friendly bedtime story using generative AI.
-
-### 💛 Inspire
-End each story with a meaningful moral, discussion question, kindness challenge, and bedtime thought.
-
----
-
-## 🎬 StorySpark in Action
-
-The final output is a complete storybook-style email delivered directly to the user.
-
-![StorySpark Email](docs/screenshots/05-storyspark-email-output.png)
-
----
-
-## 🚀 Autonomous Workflow
-
-```text
-Amazon EventBridge Scheduler
-            │
-            ▼
-      AWS Lambda
-   StorySpark Orchestrator
-            │
-            ├── Creates Daily Creative Seed
-            ├── Builds Structured AI Prompt
-            │
-            ▼
-   Gemini 3.5 Flash-Lite
-            │
-            ├── Generates Structured Story JSON
-            ▼
-      AWS Lambda
-   Validate JSON + Build HTML
-            │
-            ▼
-       Amazon SES
-            │
-            ▼
-        📬 User Inbox
-```
-
-The workflow runs automatically on a recurring schedule.
-
-### Example Schedule
-
-```text
-Time: 10:00 PM
-Time zone: America/Denver
-Target: AWS Lambda
-EventBridge payload: {}
-```
-
----
-
-## 🏗️ AWS Architecture
-
-![StorySpark AI AWS Architecture](docs/architecture/storyspark-aws-flow.png)
-
-### AWS Services Used
-
-| Service | Role |
+| | StorySpark Content |
 |---|---|
-| **Amazon EventBridge Scheduler** | Automatically triggers StorySpark every evening |
-| **AWS Lambda** | Orchestrates story generation, validation, formatting, and delivery |
-| **Amazon Simple Email Service (SES)** | Sends the finished storybook email |
-| **Amazon CloudWatch Logs** | Provides execution logs for monitoring and troubleshooting |
+| 📖 | Original children's bedtime story |
+| 🐧 | Original characters |
+| 🌲 | New setting and adventure |
+| ❤️ | Meaningful moral |
+| 💬 | Parent-child discussion question |
+| 🌞 | Next-day kindness challenge |
+| 🎨 | Children's-book illustration prompt |
+| 🌙 | Peaceful bedtime thought |
+| ✉️ | Premium storybook-style HTML email |
 
-### External AI Service
-
-**Gemini 3.5 Flash-Lite** generates the original bedtime-story content from the creative prompt constructed by StorySpark AI.
-
-> Gemini is an external AI service. Scheduling, orchestration, validation, formatting, delivery, and monitoring are handled by the StorySpark application and AWS services.
-
----
-
-## 📖 What Each Story Can Include
-
-Every generated story can contain:
-
-- 🌟 Original story title and subtitle
-- 🧒 Original child-friendly characters
-- 📚 Complete bedtime story
-- 💛 Meaningful moral lesson
-- 💬 Parent-child discussion question
-- 🤝 Next-day kindness challenge
-- 🎨 Illustration prompt
-- 🌙 Short bedtime thought
-- ✉️ Storybook-style HTML formatting
-
-The generation prompt is designed to avoid copyrighted franchise characters, recognizable movie or television characters, brands, graphic violence, frightening horror, adult themes, political content, and religious persuasion.
+The current version is designed primarily for children approximately **5–9 years old**.
 
 ---
 
-## ⚙️ How StorySpark Works
+# 📬 StorySpark in Action
 
-### 1️⃣ EventBridge Scheduler Starts the Workflow
+Below is an example of an actual StorySpark story generated by the workflow and delivered through Amazon SES.
 
-Amazon EventBridge Scheduler automatically triggers the Lambda function at the configured time.
+<p align="center">
+  <img
+    src="docs/screenshots/05-storyspark-email-output.jpg"
+    alt="StorySpark AI generated bedtime story email"
+    width="850"
+  >
+</p>
 
-The EventBridge payload can simply be:
+<p align="center">
+  <em>Example of a generated StorySpark bedtime story delivered to the inbox.</em>
+</p>
+
+<div align="center">
+
+### 📄 Complete Story Output
+
+**[Open the full StorySpark email output as PDF](docs/screenshots/storyspark-email-output-full.pdf)**
+
+</div>
+
+---
+
+# ⚡ The Autonomous Idea
+
+The most important part of StorySpark is not simply that AI creates a story.
+
+The important part is that **the user does not have to request the story every day**.
+
+Amazon EventBridge Scheduler automatically starts StorySpark at the configured time.
+
+For the deployed project:
+
+```text
+Schedule Name : StorySpark-Daily-10PM
+Schedule      : Daily
+Time          : 10:00 PM
+Time Zone     : America/Denver
+Payload       : {}
+Status        : Enabled
+```
+
+The empty payload is intentional.
 
 ```json
 {}
 ```
 
-StorySpark does not depend on a manually entered theme because it creates its own daily creative seed.
+EventBridge does not tell StorySpark what story to create.
+
+Instead, StorySpark creates its own daily creative direction after Lambda starts.
 
 ---
 
-### 2️⃣ Lambda Creates the Daily Creative Seed
-
-The application selects values such as:
+# 🔄 How StorySpark Works
 
 ```text
+┌───────────────────────────────┐
+│ Amazon EventBridge Scheduler  │
+│                               │
+│ Every evening • 10:00 PM      │
+│ America/Denver                │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ AWS Lambda                    │
+│ StorySpark Orchestrator       │
+│                               │
+│ • Generate daily seed         │
+│ • Select theme                │
+│ • Select setting              │
+│ • Select hero inspiration     │
+│ • Build AI prompt             │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ Gemini 3.5 Flash-Lite         │
+│                               │
+│ Generates original structured│
+│ bedtime-story JSON            │
+└───────────────┬───────────────┘
+                │
+                │ Story JSON
+                ▼
+┌───────────────────────────────┐
+│ AWS Lambda                    │
+│                               │
+│ • Parse JSON                  │
+│ • Validate content            │
+│ • Build HTML storybook        │
+│ • Create plain-text fallback  │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ Amazon SES                    │
+│                               │
+│ Sends completed story email   │
+└───────────────┬───────────────┘
+                │
+                ▼
+         📬 USER INBOX
+
+     New story waiting.
+     No button press required.
+```
+
+---
+
+# 🏗️ AWS Architecture
+
+<p align="center">
+  <img
+    src="docs/architecture/storyspark-aws-flow.png"
+    alt="StorySpark AI AWS architecture diagram"
+    width="1000"
+  >
+</p>
+
+<p align="center">
+  <em>StorySpark autonomous generation and delivery architecture.</em>
+</p>
+
+The architecture intentionally keeps the AWS workflow focused and serverless.
+
+### Amazon EventBridge Scheduler
+
+Provides the recurring trigger that starts the workflow automatically.
+
+### AWS Lambda
+
+Acts as the main StorySpark orchestrator.
+
+Lambda handles:
+
+```text
+Daily creative seed
+        ↓
+Prompt creation
+        ↓
+Gemini API request
+        ↓
+JSON validation
+        ↓
+HTML story creation
+        ↓
+Amazon SES delivery request
+```
+
+### Gemini 3.5 Flash-Lite
+
+Gemini is the external generative AI service used to create the original bedtime-story content.
+
+### Amazon SES
+
+Amazon Simple Email Service delivers the finished storybook email to the configured recipient.
+
+### Amazon CloudWatch
+
+Lambda execution information is available through CloudWatch Logs for monitoring and troubleshooting.
+
+---
+
+# ☁️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| **Amazon EventBridge Scheduler** | Automatic nightly execution |
+| **AWS Lambda** | Serverless orchestration and application logic |
+| **Amazon SES** | Storybook email delivery |
+| **Amazon CloudWatch** | Execution logging and troubleshooting |
+| **Python** | Application implementation |
+| **Gemini 3.5 Flash-Lite** | Generative story creation |
+| **HTML Email** | Storybook-style presentation |
+
+---
+
+# 🎲 Daily Creative Seed
+
+StorySpark does not require the user to manually choose a story every evening.
+
+When Lambda starts, the application creates a daily creative seed containing elements such as:
+
+```text
+Date
+Weekday
 Theme
 Setting
 Hero inspiration
-Date
-Weekday
 ```
 
-These values give each run a different creative direction.
-
----
-
-### 3️⃣ Lambda Builds the AI Prompt
-
-Lambda transforms the daily creative seed into a structured story-generation prompt.
-
-The prompt asks Gemini to return valid JSON containing elements such as:
+Example themes include:
 
 ```text
-Title
-Subtitle
-Characters
-Story paragraphs
-Moral lesson
-Discussion question
-Kindness challenge
-Illustration prompt
-Bedtime thought
+Kindness
+Courage
+Patience
+Honesty
+Friendship
+Empathy
+Curiosity
+Teamwork
+Gratitude
+Responsibility
+Perseverance
+Sharing
 ```
 
----
-
-### 4️⃣ Gemini Generates the Story
-
-The prompt is sent to:
+Possible environments include imaginative locations such as:
 
 ```text
-Gemini 3.5 Flash-Lite
+Moonlit forest
+Floating island
+Tiny seaside village
+Magical garden
+Mountain valley
+Hidden woodland library
+Lighthouse
+Firefly farm
+Dreamland train
+Glowing-flower valley
 ```
 
-Gemini generates the original bedtime story and returns structured JSON.
-
----
-
-### 5️⃣ Lambda Validates and Formats the Result
-
-AWS Lambda parses and validates the AI response.
-
-It then transforms the content into a polished HTML storybook email.
-
----
-
-### 6️⃣ Amazon SES Delivers the Story
-
-Amazon SES sends the finished StorySpark email to the configured recipient.
-
-The result:
-
-> 🌙 **A fresh bedtime story is already waiting in the inbox.**
-
----
-
-## 🧪 Live Deployment Evidence
-
-### ⏰ EventBridge Scheduler
-
-![EventBridge Scheduler](docs/screenshots/02-eventbridge-schedule.png)
-
-**✓ Demonstrates the recurring schedule, timezone, Lambda target, and scheduler state.**
-
----
-
-### ✅ Successful Lambda Execution
-
-![Lambda Success](docs/screenshots/03-lambda-success-log.png)
-
-**✓ CloudWatch execution evidence demonstrates that the StorySpark workflow completed successfully.**
-
----
-
-### 📧 Amazon SES
-
-![SES Verified Identity](docs/screenshots/04-ses-verified-identity.png)
-
-**✓ Shows the verified sender identity used by StorySpark.**
-
----
-
-### 🌙 Final StorySpark Email
-
-![StorySpark Email](docs/screenshots/05-storyspark-email-output.png)
-
-**✓ Demonstrates the final AI-generated bedtime story delivered to the recipient’s inbox.**
-
----
-
-## 💡 Why I Built StorySpark AI
-
-Many generative-AI applications wait for a user to type a prompt and press a button.
-
-I wanted StorySpark to work differently.
-
-Instead of waiting for a request, StorySpark has its own recurring creative workflow. It wakes up on schedule, creates a new creative direction for the day, generates the story, validates the structured output, formats the result, and delivers it automatically.
-
-The result is not simply another chatbot response.
-
-It is a small autonomous creative experience that is already complete when the user returns.
-
----
-
-## 🤖 What Makes StorySpark Autonomous?
-
-StorySpark independently performs an end-to-end workflow:
+Hero inspiration can include characters such as:
 
 ```text
-Schedule
-   ↓
-Create Creative Context
-   ↓
-Construct Prompt
-   ↓
-Generate Content
-   ↓
-Validate Structured Output
-   ↓
-Transform Content
-   ↓
-Deliver Result
-   ↓
-Record Execution Evidence
+Curious little fox
+Gentle young elephant
+Brave little rabbit
+Thoughtful young owl
+Playful red panda
+Tiny adventurous turtle
+Kind little bear
+Cheerful little penguin
+Shy young deer
+Friendly young otter
 ```
 
-The user does not need to manually initiate each generation.
+This provides creative variation while keeping StorySpark autonomous.
 
 ---
 
-## 📂 Project Structure
+# 🤖 Structured AI Generation
+
+StorySpark asks Gemini to return structured JSON instead of unrestricted text.
+
+A typical response follows this structure:
+
+```json
+{
+  "title": "Story title",
+  "subtitle": "Story subtitle",
+  "age_range": "5-9",
+  "reading_time": "5-7 minutes",
+  "theme": "friendship",
+  "hero_emoji": "🐧",
+  "characters": [
+    {
+      "name": "Character name",
+      "description": "Character description"
+    }
+  ],
+  "story_paragraphs": [
+    "Story paragraph..."
+  ],
+  "moral_title": "Moral title",
+  "moral": "Meaningful lesson",
+  "discussion_question": "Parent-child discussion question",
+  "kindness_challenge": "Tomorrow's action challenge",
+  "illustration_prompt": "Detailed illustration prompt",
+  "bedtime_thought": "Gentle final bedtime thought"
+}
+```
+
+Structured output gives Lambda predictable fields that can be validated and transformed into the final email.
+
+---
+
+# 🛡️ Child-Friendly Story Rules
+
+StorySpark's generation instructions emphasize original and age-appropriate content.
+
+The prompt asks the model to avoid:
+
+```text
+❌ Copyrighted franchise characters
+❌ Famous book imitation
+❌ Recognizable movie or television characters
+❌ Brand references
+❌ Graphic violence
+❌ Frightening horror
+❌ Adult themes
+❌ Political content
+❌ Religious persuasion
+```
+
+Instead, stories focus on:
+
+```text
+✅ Imagination
+✅ Friendship
+✅ Kindness
+✅ Courage
+✅ Curiosity
+✅ Emotional warmth
+✅ Gentle challenges
+✅ Meaningful choices
+✅ Hopeful endings
+```
+
+---
+
+# 🧩 Response Validation
+
+AI output is not passed directly into the email.
+
+StorySpark first processes the response inside Lambda.
+
+The application:
+
+```text
+Gemini Response
+      │
+      ▼
+Remove accidental code fences
+      │
+      ▼
+Extract JSON
+      │
+      ▼
+Parse JSON
+      │
+      ▼
+Validate required fields
+      │
+      ▼
+Normalize paragraphs
+      │
+      ▼
+Normalize character data
+      │
+      ▼
+Apply fallback values where appropriate
+      │
+      ▼
+Build HTML Storybook
+```
+
+This creates a more reliable workflow than simply emailing raw AI output.
+
+---
+
+# 📖 Storybook Email Design
+
+After validation, Lambda transforms the generated content into a custom HTML email.
+
+The final experience contains sections for:
+
+```text
+🌙 Story title
+✨ Subtitle
+👧 Age range
+⏱️ Reading time
+❤️ Theme
+⭐ Characters
+📖 Main adventure
+❤️ Moral
+💬 Discussion question
+🌞 Tomorrow's challenge
+🎨 Illustration prompt
+🌙 Bedtime thought
+⚡ Autonomous workflow indicator
+```
+
+A plain-text fallback is also created for email clients that cannot render HTML.
+
+---
+
+# ✅ AWS Deployment Evidence
+
+This repository contains screenshots and sample artifacts from the deployed StorySpark workflow.
+
+The purpose of this section is to demonstrate that StorySpark is not only source code.
+
+It has been configured and executed using AWS services.
+
+---
+
+## 1️⃣ EventBridge Scheduler — Enabled
+
+<p align="center">
+  <img
+    src="docs/screenshots/02-eventbridge-schedule.png"
+    alt="StorySpark EventBridge Scheduler"
+    width="1000"
+  >
+</p>
+
+The deployed recurring schedule shows:
+
+```text
+Schedule : StorySpark-Daily-10PM
+Status   : Enabled
+Cron     : 0 22 * * ? *
+Timezone : America/Denver
+```
+
+This provides the always-on behavior of StorySpark.
+
+---
+
+## 2️⃣ EventBridge → Lambda Target
+
+Amazon EventBridge Scheduler invokes the StorySpark Lambda function automatically.
+
+```text
+StorySpark-Daily-10PM
+          │
+          ▼
+      AWS Lambda
+          │
+          ▼
+          M9
+```
+
+The scheduler sends:
+
+```json
+{}
+```
+
+StorySpark then generates its own creative context.
+
+---
+
+## 3️⃣ AWS Lambda Application
+
+<p align="center">
+  <img
+    src="docs/screenshots/01-lambda-function.png"
+    alt="StorySpark AWS Lambda function"
+    width="1000"
+  >
+</p>
+
+The Python Lambda function contains the complete StorySpark orchestration workflow.
+
+---
+
+## 4️⃣ Successful Lambda Execution
+
+<p align="center">
+  <img
+    src="docs/screenshots/03-lambda-success-log.png"
+    alt="Successful StorySpark execution"
+    width="1000"
+  >
+</p>
+
+A successful execution demonstrates:
+
+```text
+Status: Succeeded
+
+statusCode: 200
+
+Story generated successfully
+
+HTML email created successfully
+
+Amazon SES send request successful
+
+STORYSPARK SUCCESS
+```
+
+A sanitized text version is included here:
+
+### 📋 [View Sample Execution Log](evidence/sample-execution-log.txt)
+
+---
+
+## 5️⃣ Amazon SES Verified Identity
+
+<p align="center">
+  <img
+    src="docs/screenshots/04-ses-verified-identity.png"
+    alt="Amazon SES verified StorySpark identity"
+    width="1000"
+  >
+</p>
+
+Amazon SES uses a verified sender identity for StorySpark delivery.
+
+Sensitive account information has been removed or should be redacted from public screenshots.
+
+---
+
+# 🌙 Real Generated Story
+
+This repository includes a real StorySpark-generated bedtime story:
+
+## **Pippin and the Glowing Nightcap**
+
+> *A cozy midnight adventure in the Silver-Pine Woods*
+
+| Attribute | Value |
+|---|---|
+| **Age Range** | 5–9 |
+| **Reading Time** | 5–7 minutes |
+| **Theme** | Friendship |
+| **Characters** | Pippin, Bramble and Pip |
+| **Lesson** | The Power of Togetherness |
+
+Explore the generated artifacts:
+
+### 📖 [Read the Complete Story](examples/sample-story.md)
+
+### 🧩 [View the Generated JSON](evidence/sample-output.json)
+
+### 📋 [View the Execution Evidence](evidence/sample-execution-log.txt)
+
+### 📄 [View the Full StorySpark Email PDF](docs/screenshots/storyspark-email-output-full.pdf)
+
+---
+
+# 📂 Repository Structure
 
 ```text
 StorySpark-AI/
 │
 ├── README.md
 ├── lambda_function.py
-├── requirements.txt
 ├── .gitignore
-├── LICENSE
+├── .env.example
 │
 ├── docs/
+│   │
 │   ├── architecture/
 │   │   └── storyspark-aws-flow.png
 │   │
-│   ├── screenshots/
-│   │   ├── 01-lambda-function.png
-│   │   ├── 02-eventbridge-schedule.png
-│   │   ├── 03-lambda-success-log.png
-│   │   ├── 04-ses-verified-identity.png
-│   │   └── 05-storyspark-email-output.png
-│   │
-│   └── evidence/
-│       ├── sample-execution-log.txt
-│       └── sample-output.json
+│   └── screenshots/
+│       ├── 01-lambda-function.png
+│       ├── 02-eventbridge-schedule.png
+│       ├── 03-lambda-success-log.png
+│       ├── 04-ses-verified-identity.png
+│       ├── 05-storyspark-email-output.jpg
+│       └── storyspark-email-output-full.pdf
+│
+├── evidence/
+│   ├── sample-execution-log.txt
+│   └── sample-output.json
 │
 └── examples/
     └── sample-story.md
@@ -341,217 +632,283 @@ StorySpark-AI/
 
 ---
 
-## 🔧 Environment Variables
+# 🚀 Deployment
 
-StorySpark uses environment variables for configuration.
+## Step 1 — Create AWS Lambda
+
+Create a Python Lambda function and deploy:
+
+```text
+lambda_function.py
+```
+
+Handler:
+
+```text
+lambda_function.lambda_handler
+```
+
+---
+
+## Step 2 — Configure Environment Variables
+
+The repository includes:
+
+```text
+.env.example
+```
 
 Example:
 
-```text
-M9=<Gemini API key>
-SENDER_EMAIL=<verified SES sender email>
-RECIPIENT_EMAIL=<recipient email>
+```env
+M9=YOUR_GEMINI_API_KEY_HERE
+
+SENDER_EMAIL=YOUR_SES_VERIFIED_EMAIL@example.com
+
+RECIPIENT_EMAIL=YOUR_RECIPIENT_EMAIL@example.com
+
 SES_REGION=us-east-1
+
 TIMEZONE_NAME=America/Denver
 ```
 
-In the current implementation, `M9` is the environment-variable name used for the Gemini API key.
+> `M9` is the environment-variable name used by the current deployed version for the Gemini API key.
 
-A future cleanup can optionally rename it to:
-
-```text
-GEMINI_API_KEY
-```
+Do not put the real Gemini API key inside the repository.
 
 ---
 
-## 🔐 Security
+## Step 3 — Configure Amazon SES
 
-### Never commit real secrets to GitHub.
-
-Do **not** upload:
-
-```text
-Gemini API keys
-AWS access keys
-AWS secret access keys
-AWS session tokens
-Passwords
-.env files containing real credentials
-```
-
-Recommended `.gitignore` entries:
-
-```gitignore
-.env
-*.env
-__pycache__/
-*.pyc
-.DS_Store
-```
-
----
-
-## 📧 Amazon SES Setup
-
-The sender email address must be verified in Amazon SES.
+Create and verify the email identity used by StorySpark.
 
 ```text
 Amazon SES
-    ↓
-Verified identities
-    ↓
-Create identity
-    ↓
-Email address
-    ↓
-Verify email from inbox
+     │
+     ▼
+Configuration
+     │
+     ▼
+Identities
+     │
+     ▼
+Create Identity
+     │
+     ▼
+Email Address
+     │
+     ▼
+Verify
+     │
+     ▼
+✅ Verified
 ```
 
-For testing in the SES sandbox, recipient verification may also be required.
-
-Successful identity status:
-
-```text
-Verified
-```
+The Lambda execution role must also have permission to send email through SES.
 
 ---
 
-## ⏰ EventBridge Scheduler Setup
+## Step 4 — Configure EventBridge Scheduler
 
-Example configuration:
+Create a recurring EventBridge Scheduler schedule.
+
+Configuration used by this deployment:
 
 ```text
-Schedule type: Cron-based schedule
-Time zone: America/Denver
-Time: 10:00 PM
-Target: AWS Lambda
-Lambda function: M9
-Payload: {}
-Flexible time window: Off
+Schedule Name       : StorySpark-Daily-10PM
+Schedule Type       : Cron-based
+Cron Expression     : 0 22 * * ? *
+Execution Time Zone : America/Denver
+Flexible Window     : Off
+Target              : AWS Lambda
+Payload             : {}
 ```
 
-Example daily cron expression:
+Equivalent expression:
 
 ```text
 cron(0 22 * * ? *)
 ```
 
-Because the scheduler time zone is configured as `America/Denver`, EventBridge can apply the schedule using Mountain Time.
-
 ---
 
-## 🔄 Example Execution Flow
+## Step 5 — Test StorySpark
+
+The complete execution should follow:
 
 ```text
-EventBridge automatically triggers StorySpark
-                ↓
-Lambda creates today's creative seed
-                ↓
-Lambda builds the story prompt
-                ↓
-Gemini generates structured story JSON
-                ↓
-Lambda validates the response
-                ↓
-Lambda builds the HTML storybook email
-                ↓
-Amazon SES sends the email
-                ↓
-🌙 A new bedtime story is waiting in the inbox
+EventBridge
+     │
+     ▼
+Lambda starts
+     │
+     ▼
+Daily seed created
+     │
+     ▼
+Gemini called
+     │
+     ▼
+Story JSON returned
+     │
+     ▼
+JSON validated
+     │
+     ▼
+HTML storybook generated
+     │
+     ▼
+Amazon SES
+     │
+     ▼
+📬 Story delivered
 ```
 
 ---
 
-## 🧩 Challenges & Lessons Learned
+# 🔐 Security
 
-Building StorySpark involved much more than calling a generative-AI model.
+Secrets are intentionally excluded from this repository.
 
-### Model Availability
+Never commit:
 
-An earlier Gemini model returned an availability error, so the application was updated to use Gemini 3.5 Flash-Lite.
+```text
+❌ Gemini API key
 
-### Lambda Execution Time
+❌ AWS Access Key ID
 
-AI-generation requests can take longer than a short default Lambda timeout, so the Lambda timeout needed to be configured appropriately.
+❌ AWS Secret Access Key
 
-### Amazon SES Permissions
+❌ AWS session tokens
 
-Successful email delivery required the correct IAM permissions and a verified SES identity.
+❌ Passwords
 
-### Key Lesson
+❌ Real .env files
 
-The biggest lesson from the project was that autonomous AI is not only about generation.
+❌ Private credentials
+```
 
-A reliable autonomous workflow also requires:
+StorySpark uses environment variables and AWS IAM permissions instead.
 
-**Scheduling + orchestration + structured output + validation + delivery + security + observability**
+Public screenshots should also avoid exposing:
+
+```text
+AWS account IDs
+Full sensitive ARNs
+API keys
+Personal email addresses
+Private identifiers
+```
 
 ---
 
-## 🔮 Future Improvements
+# 🧠 What I Learned
 
-Future versions of StorySpark could add:
+Building StorySpark reinforced an important idea:
 
-- 🎨 AI-generated illustrations for each story
-- 🧠 Story history and memory
-- 🧒 Personalized recurring characters
-- 👨‍👩‍👧 Parent-controlled themes
+> **The generative model is only one part of an autonomous application.**
+
+Generating a story is the creative step.
+
+Making that story appear automatically requires much more:
+
+```text
+Scheduling
+     +
+Serverless Execution
+     +
+AI Generation
+     +
+Structured Output
+     +
+Validation
+     +
+Formatting
+     +
+Permissions
+     +
+Delivery
+     =
+StorySpark AI
+```
+
+During development, I worked through practical issues involving model availability, Lambda execution time, API-response handling, Amazon SES permissions, sender verification, and scheduled execution.
+
+Solving those pieces transformed StorySpark from a manual prototype into a complete automated workflow.
+
+---
+
+# 🔮 Future Improvements
+
+StorySpark currently focuses on reliably completing the autonomous creative loop:
+
+> **Schedule → Create → Format → Deliver**
+
+Future versions could explore:
+
+- 🎨 Actual AI-generated story illustrations
+- 🧠 Lightweight story memory
+- 🐧 Recurring original characters
+- 📚 Multi-part adventures
 - 🎂 Adjustable age ranges
-- 🌍 Multi-language stories
-- 🪣 Amazon S3 story storage
-- 🗄️ DynamoDB story history
-- 🌐 Web interface for browsing previous stories
-- 🚨 Advanced monitoring and failure notifications
+- 👨‍👩‍👧 Parent-selected themes
+- 🌎 Multi-language stories
+- 🪣 Amazon S3 story archives
+- 🗄️ Amazon DynamoDB story history
+- 🌐 Web-based story library
+- 📊 Enhanced observability
+- 🚨 Failure notifications
 
 ---
 
-## 🛠️ Built With
+# 🏆 AWS Builder Center Weekend Creative Agent Challenge
 
-| Technology | Purpose |
-|---|---|
-| **AWS Lambda** | Application orchestration |
-| **Amazon EventBridge Scheduler** | Autonomous scheduling |
-| **Amazon SES** | Email delivery |
-| **Amazon CloudWatch** | Monitoring and logs |
-| **Python** | Application logic |
-| **Gemini 3.5 Flash-Lite** | Story generation |
-
----
-
-## 🏆 AWS Builder Center Weekend Creative Agent Challenge
-
-This project was created for the:
+StorySpark AI was created for the:
 
 ### **AWS Builder Center Weekend Creative Agent Challenge**
 
-**Article title**
+The project explores the concept of an **always-on creative agent** that generates something new independently and has the result waiting when the user returns.
 
-```text
-Weekend Creative Agent Challenge: StorySpark AI
-```
+### 📝 Builder Center Article
 
-**Challenge tag**
+**Weekend Creative Agent Challenge: StorySpark AI**
 
-```text
-#agents
-```
+`#agents`
+
+> Add the published AWS Builder Center article URL here after publication.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Lakshmanaprakash Murugesan**
+<div align="center">
+
+### Lakshmanaprakash Murugesan
+
+Built with curiosity, serverless technology, generative AI, and a little bedtime magic.
+
+</div>
 
 ---
 
 <div align="center">
 
-## 🌙 StorySpark AI
+# 🌙 StorySpark AI
 
-### A new story. A new adventure. Waiting every night.
+### Imagine • Create • Inspire
 
-**Built with ☁️ AWS + 🤖 Generative AI + ✨ a little bedtime magic.**
+**Every evening begins with an empty page.**
+
+**Every night ends with a new adventure waiting in the inbox.**
+
+<br>
+
+### ⏰ → ☁️ → ✨ → 📖 → 📧
+
+**Schedule → Create → Format → Deliver**
+
+<br>
+
+Made with ☁️ **AWS** + 🤖 **Generative AI**
 
 </div>
