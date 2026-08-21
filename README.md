@@ -864,8 +864,7 @@ The project explores the concept of an **always-on creative agent** that generat
 `#agents`
 
 > 📝 Article: https://builder.aws.com/content/3Gk7zD2V6jM5rZnqHx8BiyNRMZE/weekend-creative-agent-challenge-storyspark-ai
->💻 GitHub: https://github.com/Lakshmanaprakashmurugesan/StorySpark-AI
->🎥 Demo: https://youtu.be/YlaapcWOuDQ
+
 ---
 
 # 👨‍💻 Author
